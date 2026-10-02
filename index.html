@@ -716,116 +716,65 @@
         </p>
       </div>
 
-      <div class="cnt-callout">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <div class="cnt-callout-text">
-          <strong>Important Note:</strong> In compliance with the course assignment policy, raw lab worksheets and solution files are not uploaded. This section documents my reflections and conceptual learnings from completed coursework.
-        </div>
-      </div>
-
-      <!-- Reflection: CNT 3004 - Assignment 1 (Verbatim from Assignment) -->
+      <!-- Reflection: CNT 3004 - Assignment 1 (Important Highlights) -->
       <div class="reflection-card">
         <div class="reflection-header">
           <div>
-            <h3 class="reflection-title">CNT 3004 - Assignment 1</h3>
-            <span style="font-size: 0.85rem; color: var(--ucf-gold);">OSI & TCP/IP • Addressing • Topologies • Cabling • Diagnostics & Wireshark</span>
+            <h3 class="reflection-title">CNT 3004 - Assignment 1: Hands-On Networking Concepts</h3>
+            <span style="font-size: 0.85rem; color: var(--ucf-gold);">Core Models • Cabling Architecture • Terminal Diagnostics • Wireshark</span>
           </div>
           <span class="reflection-status">Assignment 1 Completed</span>
         </div>
 
-        <!-- OSI & TCP/IP -->
+        <!-- 1. Network Models & Encapsulation -->
         <div class="qa-block">
-          <div class="qa-title">1 & 2. OSI and TCP/IP Models</div>
+          <div class="qa-title">1. Network Models, Addressing & Encapsulation</div>
           <div class="qa-content">
-            <p><strong>OSI Model:</strong> Application &rarr; Presentation &rarr; Session &rarr; Transport &rarr; Network &rarr; Data Link &rarr; Physical.</p>
+            <p><strong>OSI vs. TCP/IP Models:</strong> The OSI model follows <code>Application &rarr; Presentation &rarr; Session &rarr; Transport &rarr; Network &rarr; Data Link &rarr; Physical</code>. Unlike OSI, the TCP/IP model merges Presentation and Session into Application.</p>
             <ul>
-              <li>HTTP is closest related to Application.</li>
-              <li>TCP is closest related to the Transport layer.</li>
-              <li>IP is closest related to the Network layer.</li>
-              <li>Ethernet frames/MAC addresses are closest related to the data link layer.</li>
-            </ul>
-            <p style="margin-top: 0.5rem;"><strong>TCP/IP Model:</strong> Application &rarr; Transport &rarr; Network &rarr; Link &rarr; Physical. Unlike OSI, TCP/IP merges Presentation, Session into Application.</p>
-          </div>
-        </div>
-
-        <!-- Addressing -->
-        <div class="qa-block">
-          <div class="qa-title">3. MAC vs. IP Addressing</div>
-          <div class="qa-content">
-            <ul>
-              <li>MAC address is 6 bytes</li>
-              <li>IPv4 address is 4 bytes</li>
-              <li>IPv6 address is 16 bytes</li>
-              <li>Port number is 2 bytes</li>
-            </ul>
-            <p style="margin-top: 0.5rem;">The difference between a MAC address and an IP address is that a MAC address identifies a network interface while an IP address identifies a device's network location. (IP, unlike MAC, used for routing across networks)</p>
-          </div>
-        </div>
-
-        <!-- Topologies -->
-        <div class="qa-block">
-          <div class="qa-title">4. Star vs. Bus Topology</div>
-          <div class="qa-content">
-            <p>A star topology is more appropriate of a choice, even though there are more cables to manage. This is because if the bus cable is cut or interrupted, it affects all of the computers connected to it, while with a star topology, it allows for one computer to have downtime while leaving the rest of them to continue operating. On a bus, all 20 computers share one cable, which can cause subsequently more collisions and slower performance. With a star, on the other hand, each device having its own dedicated link.</p>
-          </div>
-        </div>
-
-        <!-- Switches vs Routers -->
-        <div class="qa-block">
-          <div class="qa-title">6. Switches vs. Routers</div>
-          <div class="qa-content">
-            <ul>
-              <li><strong>Ten computers in the same classroom need to communicate with each other:</strong> This one would be more suitable with the switch. This is because the switch is defined as being within a network. And 10 computers are all in the same classroom, which sits in one network.</li>
-              <li><strong>The classroom network needs to communicate with another network and access the Internet:</strong> A router is more appropriate for this. This is because a router is defined as transporting between networks. If the classroom network needs to communicate with another network and access the internet, then a router is required as it needs to transfer between networks.</li>
+              <li><strong>Layer Associations:</strong> HTTP relates to Application, TCP to Transport, IP to Network, and Ethernet frames/MAC addresses to Data Link.</li>
+              <li><strong>MAC vs. IP Addressing:</strong> A MAC address (6 bytes) identifies a specific network interface, while an IP address (IPv4 = 4 bytes, IPv6 = 16 bytes) identifies a device's network location for routing across networks. Port numbers are 2 bytes.</li>
+              <li><strong>Encapsulation:</strong> Packaging data layer-by-layer with a "from" and "to" header before sending: the transport layer produces a segment, the network layer adds an IP header to create a packet, the data link layer adds a MAC header/trailer to produce a frame, and the physical layer converts the frame into bits for transmission.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Encapsulation -->
+        <!-- 2. Client-Server Architecture -->
         <div class="qa-block">
-          <div class="qa-title">7. Encapsulation & De-encapsulation</div>
+          <div class="qa-title">2. Client-Server Architecture & Real-World Analogy</div>
           <div class="qa-content">
-            <p>Encapsulation is defined as adding information around data before sending it. De-encapsulation is reverse, where it removes information around the data before sending it. The transport layer produces a segment, with the network layer taking the segment, adding an IP header to produce a packet. In my own words it's packaging the data with a "from" and "to" towards the network layer. Data Link layer takes the packet and adds a MAC header/trailer to produce a frame, then Physical layer converts the frame into bits for transmission.</p>
+            <p>A client is a device that sends a query or request, while a server is a responder that interprets and sends the appropriate data back to the client.</p>
+            <p style="margin-top: 0.5rem;">
+              <strong>Fast Food Drive-Thru Analogy:</strong> A real-life world example is fast food drive-thrus. The client (customer) requests an order of food, the server (worker) takes the order and relays the information to get the food prepared, and the response is the food, which is the data returned to the client.
+            </p>
           </div>
         </div>
 
-        <!-- Client-Server Model -->
+        <!-- 3. Topologies & Structured Cabling -->
         <div class="qa-block">
-          <div class="qa-title">8. Client-Server Model & Fast Food Analogy</div>
+          <div class="qa-title">3. Network Topologies & Structured Cabling Infrastructure</div>
           <div class="qa-content">
-            <p>A client is usually a device or something that sends a query, a request to change something. A server is a responder for the client that interprets and sends the appropriate data back to the client to answer the query or a request. A request occurs from the client &rarr; server (client asks a specific query of data to server) while a response occurs from server &rarr; client (server relays necessary data to client).</p>
-            <p style="margin-top: 0.5rem;">A client-server application example in the real-life world is fast food drive-thrus. The client, the customer, will request an order of food, with the server being the individual who takes the order and relays the information to get the food prepared and ready to pick up. The request is the food orders. The response is the food, which is the data that will be sent back to the client.</p>
-          </div>
-        </div>
-
-        <!-- Structured Cabling -->
-        <div class="qa-block">
-          <div class="qa-title">9, 10 & 11. Structured Cabling & Infrastructure</div>
-          <div class="qa-content">
-            <p><strong>In order:</strong> <code>Laptop &rarr; Wall jack &rarr; patch panel &rarr; Switch/IDF &rarr; Backbone Cabling &rarr; MDF &rarr; Demarc &rarr; ISP</code></p>
-            <p style="margin-top: 0.5rem;">The MDF, a main distribution frame, acts as the network's main hub and connects to the ISP. IDFs, also known as intermediate distribution frames, are mini-hubs that branch from the MDF, acting as extended network coverages for devices. Devices will connect to the nearest IDF. The demarc is the service provider handoff, responsible only for the connection into the building, acting as the handoff/boundary point between the ISP and the organization's own cabling/network.</p>
-            <p style="margin-top: 0.5rem;">Horizontal UTP cabling is designed to run from the patch panel to the wall outlet with the maximum permanent link distance of 90 meters. Backbone cabling connects the IDF back to the MDF, typically running between floors of a building, like an elevator.</p>
-          </div>
-        </div>
-
-        <!-- Home Network & Diagnostics -->
-        <div class="qa-block">
-          <div class="qa-title">14, 16 & 17. Home Network Topology & Practical Diagnostics</div>
-          <div class="qa-content">
-            <p><strong>Home Topology:</strong> Netgear R7000P Router / Motorola MB7621 Modem / End Devices: MacBook (Wi-Fi), iPhone (Wi-Fi), Desktop PC (wired via powerline/Ethernet). Considering that everything branches out from one router, this matches the star topology.</p>
-            <p style="margin-top: 0.5rem;"><strong>Ping Test:</strong> <code>127.0.0.1</code> represents my local machine, my MacBook’s. Specifically, it tests that my machine's own network stack is functioning without sending anything to the network. Both pings got 100% replies with 0% packet loss. For the first ping, it took 0.2 milliseconds, which is essentially instant, as it never leaves my machine, compared to the UCF website, which took 41 milliseconds because it has to travel outside the UCF network.</p>
-            <p style="margin-top: 0.5rem;"><strong>Traceroute Analysis:</strong> Amazon had been cut off around hop 11 and UCF was cut off around hop 9, making it 11 hops with Amazon and 9 hops with UCF. A hop represents one router the packet passes through on its way to the destination. Both have identical hops from 1 to 7, but then they diverge around hop 8, where Amazon goes to CloudFront and UCF appears to go through the MSN routers before reaching its network. The asterisks mean that a hop didn't respond within the timeout window due to network congestion or possibly a router configured to not reply to the traceroute probes, even though traffic is flowing through it.</p>
-          </div>
-        </div>
-
-        <!-- Wireshark -->
-        <div class="qa-block">
-          <div class="qa-title">19. Wireshark 3-Pane Interface</div>
-          <div class="qa-content">
+            <p><strong>Star vs. Bus Topology:</strong> A star topology is chosen because if a bus cable is interrupted, all connected computers are affected and experience packet collisions. With a star topology, each device has its own dedicated link, allowing one computer to experience downtime while leaving the rest to continue operating.</p>
+            <p style="margin-top: 0.5rem;"><strong>Switches vs. Routers:</strong> A switch connects devices within the same network (such as 10 computers in a classroom), whereas a router is required to transport packets between different networks and connect to the Internet.</p>
+            <p style="margin-top: 0.5rem;"><strong>Structured Cabling Hierarchy:</strong></p>
+            <p><code>Laptop &rarr; Wall jack &rarr; Patch panel &rarr; Switch/IDF &rarr; Backbone Cabling &rarr; MDF &rarr; Demarc &rarr; ISP</code></p>
             <ul>
-              <li><strong>Top pane (Packet List):</strong> The scrolling table which contains the number, time, source, destination, the protocol, the length, and information. One row per packet captured.</li>
-              <li><strong>Middle pane (Packet Details):</strong> Shows each packet layer by layer, which is the frame, the Ethernet, and then the Internet Protocol and so on and so forth. In my case, it's breaking down frame 1, which is Ethernet II source and destination MAC addresses and then the IPv4 addresses and then IGMP.</li>
-              <li><strong>Bottom pane (Packet Bytes):</strong> Shows the packet bytes. It simply shows the raw binary or hex behind it. It also has an ASCII translation on the right side.</li>
+              <li><strong>Horizontal Cabling:</strong> Runs from the patch panel to the wall outlet with a maximum permanent link distance of 90 meters.</li>
+              <li><strong>Backbone Cabling:</strong> Connects Intermediate Distribution Frames (IDFs) back to the central Main Distribution Frame (MDF), typically running between floors like an elevator.</li>
+              <li><strong>Demarcation Point (Demarc):</strong> The service provider handoff and boundary point between the ISP and the organization's internal cabling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. Home Network, Diagnostics & Wireshark -->
+        <div class="qa-block">
+          <div class="qa-title">4. Home Topology, Terminal Diagnostics & Wireshark</div>
+          <div class="qa-content">
+            <p><strong>Home Network Mapping:</strong> Mapped my own home network matching a star topology branching from a Netgear R7000P wireless router connected to a Motorola MB7621 modem, supporting a MacBook (Wi-Fi), iPhone (Wi-Fi), and desktop PC (wired via powerline adapter).</p>
+            <ul>
+              <li><strong>Ping Diagnostics:</strong> Pinging <code>127.0.0.1</code> tested my MacBook's local network stack without sending anything to the network (0.2 ms round-trip time). Pinging <code>ucf.edu</code> took 41 ms as packets routed outside across the Internet, both achieving 0% packet loss.</li>
+              <li><strong>Traceroute Route Analysis:</strong> Traced 11 hops to Amazon (diverging to CloudFront at hop 8) and 9 hops to UCF (routing through MSN routers). Learned that asterisks (<code>* * *</code>) occur when intermediate routers are configured not to reply to ICMP probes or during brief congestion, even while traffic flows.</li>
+              <li><strong>Wireshark 3-Pane Interface:</strong> Explored packet captures across the Top Pane (Packet List table with number, timestamp, source, destination, protocol), Middle Pane (Packet Details displaying layer-by-layer headers: Frame, Ethernet II, IPv4, IGMP), and Bottom Pane (raw hex/binary Packet Bytes with ASCII translation).</li>
             </ul>
           </div>
         </div>
