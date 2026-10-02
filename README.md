@@ -11,4 +11,4 @@ Created for **CNT 3004 - Computer Network Concepts**.
 - **Technical Experience:** AI Automation engineering at dasFlow & high-volume healthcare operations at Orlando Health (ORMC).
 - **CNT 3004 Showcase:** Structured lab reflections (Wireshark packet analysis, TCP/IP, OSI layers), quizzes, and conceptual takeaways.
 - **Goals & Activities:** Future cybersecurity career objectives, applied projects, and community tutoring.
-- **Curriculum Vitae / Resume:** Inline PDF preview and download.
+- **Resume:** Inline PDF preview and download.
