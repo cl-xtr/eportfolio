@@ -257,12 +257,13 @@
 
     .profile-photo-wrapper {
       position: relative;
-      width: 190px;
-      height: 190px;
+      width: 200px;
+      height: 200px;
       margin: 0 auto 1.25rem;
       border-radius: 50%;
       padding: 4px;
       background: linear-gradient(135deg, var(--ucf-gold), var(--accent));
+      overflow: hidden;
     }
 
     .profile-photo {
@@ -270,8 +271,11 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
+      object-position: 49% 78%;
+      transform: scale(1.5) translateY(12px);
       background: #1e293b;
       display: block;
+      transition: transform 0.3s ease;
     }
 
     .profile-name {
@@ -581,12 +585,13 @@
           <span>Information Technology Undergraduate | Aspiring Cybersecurity Engineer</span>
         </div>
         <p class="hero-bio">
-          Welcome to my professional e-Portfolio! I am an Information Technology student at the 
-          <strong>University of Central Florida (UCF)</strong> with a current GPA of 3.68, having graduated with an Associate in Arts degree in STEM from Valencia College with a 3.62 GPA. 
-          My primary areas of interest within the technology field include <strong>Computer Network Concepts, Defensive Cybersecurity, and Applied AI Automations</strong>.
+          Welcome to my e-Portfolio! I'm currently an IT major student at the <strong>University of Central Florida (UCF)</strong>. I am currently in my fourth year with a <strong>3.68 GPA</strong>, having graduated with an Associate in Arts degree in STEM from <strong>Valencia College with a 3.62 GPA</strong>. Although I switched majors from Computer Science (CS) to Information Technology (IT), I am about halfway into my second year.
         </p>
         <p class="hero-bio">
-          Currently, I serve as an <strong>AI Automation & Systems Intern at dasFlow Custom Athleisure Apparel</strong> in Winter Park, FL, where I manage and build agentic AI pipelines. In addition to technical systems, I have contributed over 100 volunteer hours at <strong>Orlando Regional Medical Center (Orlando Health)</strong> across Surgery Operations, Guest Services, and Intermediate Critical Care (3C ICC), maintaining focus and discipline while completing high-volume operational tasks.
+          Right now, my interests are: <strong>Computer Network Concepts, Defensive Cybersecurity, and Applied AI Automations</strong>, where I have a very strong interest in AI (including Large Language Models).
+        </p>
+        <p class="hero-bio">
+          I am currently interning as an <strong>AI Automation & Systems Intern at dasFlow Custom Athleisure Apparel</strong> in Winter Park, Florida, with most of my operations occurring on the UCF campus. In this role, I manage and build agentic AI pipelines. Last year, I also contributed over <strong>100 volunteer hours at Orlando Regional Medical Center</strong> across a multitude of departments—such as <strong>4B Surgery Operations, North Tower Guest Services, and Intermediate Critical Care (3C ICC)</strong>. Throughout my time there, I maintained focus and discipline while completing high-volume operational tasks.
         </p>
         <div class="hero-pills">
           <span class="hero-pill">🛡️ Cybersecurity & Networks</span>
@@ -609,7 +614,7 @@
       <!-- Professional Photo Card -->
       <div class="profile-card">
         <div class="profile-photo-wrapper">
-          <img src="assets/avatar.svg" alt="Christopher Le - Profile Photo" class="profile-photo" id="profileImage">
+          <img src="assets/profile.jpeg" alt="Christopher Le - Profile Photo" class="profile-photo" id="profileImage">
         </div>
         <div class="profile-name">Christopher Le</div>
         <div class="profile-tagline">B.S. in Information Technology</div>
@@ -628,7 +633,7 @@
           </div>
           <div class="meta-item">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <span>clechris063@gmail.com</span>
+            <span>lechristopher2005@gmail.com</span>
           </div>
         </div>
       </div>
