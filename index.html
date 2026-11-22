@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christopher Le | Professional e-Portfolio</title>
-  <meta name="description" content="Professional e-Portfolio for Christopher Le - Information Technology Student at UCF, AI Automation & Systems Intern at dasFlow.">
+  <meta name="description" content="Professional e-Portfolio for Christopher Le - Information Technology Student at UCF, AI Automation & Systems Intern at dasFlow, Aspiring Cybersecurity Operations Engineer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0b0f19;
@@ -21,6 +21,8 @@
       --ucf-gold: #ffc904;
       --gold-dark: #cc9f00;
       --success: #10b981;
+      --teal: #0d9488;
+      --teal-light: #2dd4bf;
       --tag-bg: #1e293b;
       --tag-text: #93c5fd;
       --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -59,7 +61,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11, 15, 25, 0.9);
+      background: rgba(11, 15, 25, 0.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--surface-border);
     }
@@ -93,7 +95,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.5rem;
+      gap: 1.3rem;
       align-items: center;
     }
 
@@ -110,6 +112,16 @@
     nav a:hover, nav a.active {
       color: #fff;
       background: var(--surface-border);
+    }
+
+    .nav-badge-link {
+      color: var(--teal-light) !important;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      background: rgba(13, 148, 136, 0.12);
+    }
+
+    .nav-badge-link:hover {
+      background: rgba(13, 148, 136, 0.25) !important;
     }
 
     .btn-nav-resume {
@@ -202,6 +214,7 @@
 
     .hero-actions {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       align-items: center;
     }
@@ -223,6 +236,27 @@
     .btn-primary:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
+    }
+
+    .btn-featured {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0d9488, #0f766e);
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid #14b8a6;
+      transition: all 0.2s;
+    }
+
+    .btn-featured:hover {
+      background: linear-gradient(135deg, #14b8a6, #0d9488);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(20, 184, 166, 0.35);
     }
 
     .btn-secondary {
@@ -271,6 +305,8 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center 25%;
+      transform: scale(1.4);
       background: #1e293b;
       display: block;
     }
@@ -331,6 +367,10 @@
       margin-bottom: 6px;
     }
 
+    .section-tag.featured {
+      color: var(--teal-light);
+    }
+
     .section-title {
       font-size: 2rem;
       font-weight: 700;
@@ -379,6 +419,12 @@
       border-radius: 6px;
     }
 
+    .card-badge.teal {
+      background: rgba(13, 148, 136, 0.2);
+      color: #5eead4;
+      border: 1px solid rgba(20, 184, 166, 0.3);
+    }
+
     .card-title {
       font-size: 1.2rem;
       font-weight: 700;
@@ -414,6 +460,105 @@
 
     .card-body li {
       margin-bottom: 0.35rem;
+    }
+
+    /* Featured Project: Finance Rafa */
+    .featured-project-container {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(13, 148, 136, 0.08));
+      border: 1px solid rgba(20, 184, 166, 0.35);
+      border-radius: 20px;
+      padding: 2.25rem;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-project-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0d9488, #2dd4bf, var(--ucf-gold));
+    }
+
+    .featured-project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .featured-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+
+    .metric-card {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid rgba(45, 212, 191, 0.25);
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--teal-light);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .featured-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .featured-subbox {
+      background: rgba(17, 24, 39, 0.65);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 1.35rem;
+    }
+
+    .featured-subbox h4 {
+      color: var(--teal-light);
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .interactive-deck-cta {
+      margin-top: 1.75rem;
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.15), rgba(30, 41, 59, 0.8));
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     /* CNT 3004 Section */
@@ -520,7 +665,7 @@
 
     .pdf-frame {
       width: 100%;
-      height: 750px;
+      height: 780px;
       border: 1px solid var(--surface-border);
       border-radius: 10px;
       background: #1f2937;
@@ -545,6 +690,12 @@
       .grid-2 {
         grid-template-columns: 1fr;
       }
+      .featured-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .featured-details-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -561,6 +712,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#finance-rafa" class="nav-badge-link">Featured: Finance Rafa</a></li>
           <li><a href="#cnt3004">CNT 3004 Course</a></li>
           <li><a href="#goals">Goals & Projects</a></li>
           <li><a href="#resume" class="btn-nav-resume">View Resume</a></li>
@@ -579,7 +731,7 @@
         </div>
         <h1 class="hero-title">Christopher Le</h1>
         <div class="hero-subtitle">
-          <span>Information Technology Undergraduate | Aspiring Cybersecurity Engineer</span>
+          <span>Information Technology Undergraduate | Aspiring Cybersecurity Operations Engineer</span>
         </div>
         <p class="hero-bio">
           Welcome to my e-Portfolio! I'm currently an IT major student at the <strong>University of Central Florida (UCF)</strong>. I am currently in my fourth year with a <strong>3.68 GPA</strong>, having graduated with an Associate in Arts degree in STEM from <strong>Valencia College with a 3.62 GPA</strong>. Although I switched majors from Computer Science (CS) to Information Technology (IT) halfway into my second year, I am finishing Information Technology into my fourth year.
@@ -591,16 +743,19 @@
           I am currently interning as an <strong>AI Automation & Systems Intern at dasFlow Custom Athleisure Apparel</strong> in Winter Park, Florida, with most of my operations occurring on the UCF campus. In this role, I manage and build agentic AI pipelines. Last year, I also contributed over <strong>100 volunteer hours at Orlando Regional Medical Center</strong> across a multitude of departments—such as <strong>4B Surgery Operations, North Tower Guest Services, and Intermediate Critical Care (3C ICC)</strong>. Throughout my time there, I maintained focus and discipline while completing high-volume operational tasks.
         </p>
         <div class="hero-pills">
-          <span class="hero-pill">🛡️ Cybersecurity & Networks</span>
+          <span class="hero-pill">🛡️ Defensive Cybersecurity & Networks</span>
           <span class="hero-pill">🤖 Agentic AI & Rafa's (dasFlow)</span>
-          <span class="hero-pill">🏥 Orlando Regional Medical Center</span>
-          <span class="hero-pill">⚡ Zapier, HubSpot & Make</span>
-          <span class="hero-pill">🔍 Network Concepts & Diagnostics</span>
+          <span class="hero-pill">🏥 Orlando Regional Medical Center (100+ Hrs)</span>
+          <span class="hero-pill">⚡ Zapier, QuickBooks, HubSpot & Make</span>
+          <span class="hero-pill">🔍 Network Concepts & Packet Diagnostics</span>
         </div>
         <div class="hero-actions">
+          <a href="#finance-rafa" class="btn-featured">
+            <span>Featured Case Study: Finance Rafa</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
           <a href="#cnt3004" class="btn-primary">
             <span>Explore CNT 3004 Coursework</span>
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="#resume" class="btn-secondary">
             <span>Official Resume</span>
@@ -643,7 +798,7 @@
       <div class="section-header">
         <div class="section-tag">Experience</div>
         <h2 class="section-title">Professional Experience</h2>
-        <p class="section-desc">Hands-on AI workflows and high-volume hospital operations.</p>
+        <p class="section-desc">Hands-on AI workflows and high-volume clinical operations.</p>
       </div>
 
       <div class="grid-2">
@@ -705,6 +860,101 @@
     </div>
   </section>
 
+  <!-- Featured Project: Finance Rafa (Major Internship Achievement) -->
+  <section id="finance-rafa" class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag featured">Featured Project & Internship Achievement</div>
+        <h2 class="section-title">Finance Rafa, by CL</h2>
+        <p class="section-desc">
+          Autonomous financial intelligence pipeline built for dasFlow Custom Athleisure Apparel by Christopher Le (UCF Fall AI Team).
+        </p>
+      </div>
+
+      <div class="featured-project-container">
+        <div class="featured-project-header">
+          <div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 4px;">
+              Finance Rafa: Mathematical Verification & Autonomous Reporting Pipeline
+            </h3>
+            <span style="color: var(--teal-light); font-weight: 600; font-size: 0.95rem;">
+              dasFlow Custom Athleisure Apparel • UCF Fall AI Team • Lead Builder & Verification Architect
+            </span>
+          </div>
+          <span class="card-badge teal">Production Live System</span>
+        </div>
+
+        <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.7; margin-bottom: 1rem;">
+          Finance Rafa was engineered to solve manual financial reconciliation and reporting bottlenecks across company leadership. By integrating <strong>QuickBooks Online</strong> and <strong>HubSpot CRM</strong>, the system aggregates accounts receivable, verifies invoice payment ladders, and produces executive briefings. The core architectural philosophy is strict: <strong>"Scripts do the math"</strong>—Python deterministic scripts compute and verify every ledger balance, date calculation, and tax deduction, while LLMs strictly format and communicate verified findings.
+        </p>
+
+        <!-- Hard Metrics Grid -->
+        <div class="featured-metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">4 / 4</div>
+            <div class="metric-label">Live Reports Delivered (100%)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">1,119</div>
+            <div class="metric-label">Automated Tests Passing</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">0</div>
+            <div class="metric-label">QuickBooks Writes (Read-Only)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">74</div>
+            <div class="metric-label">Architectural Decisions Logged</div>
+          </div>
+        </div>
+
+        <!-- System Architecture & Shipped Pipelines -->
+        <div class="featured-details-grid">
+          <div class="featured-subbox">
+            <h4>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Core Pipelines Shipped to Production
+            </h4>
+            <ul style="color: #cbd5e1; font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.6;">
+              <li><strong>Friday Money Report (Live Nov 4):</strong> Pulls live QuickBooks bank balances and open AR, checks against HubSpot deal stages, and auto-generates verified markdown briefings for leadership.</li>
+              <li><strong>Daily Collection Reminders (5-Tier Ladder):</strong> Escalation ladder tracking invoices across Days 3, 7, 14, 21, and 30 with automated draft triggers.</li>
+              <li><strong>Friday Financial Safety Check:</strong> 4-point verification matrix auditing overdue invoices, missing purchase orders, and mismatched deal stages.</li>
+              <li><strong>Florida Sales Tax Tracking:</strong> Automates Florida DR-15 deadline calculations and timely electronic collection allowances.</li>
+              <li><strong>Monthly Garment Volume Tracking:</strong> Tracks custom garment units manufactured and correlates volume with gross revenue.</li>
+            </ul>
+          </div>
+
+          <div class="featured-subbox">
+            <h4>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              Strict Architectural Guardrails
+            </h4>
+            <ul style="color: #cbd5e1; font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.6;">
+              <li><strong>Enforced Read-Only on QuickBooks:</strong> System has zero write or mutation privileges to live books; preventing accidental accounting overwrites.</li>
+              <li><strong>Deterministic Verification:</strong> LLMs never perform arithmetic or financial aggregations; Python verification scripts compute all figures before presentation.</li>
+              <li><strong>Fail-Closed Security:</strong> If API records from HubSpot or QuickBooks are missing, ambiguous, or out of sync, the pipeline halts immediately and alerts the team.</li>
+              <li><strong>Human-in-the-Loop Delivery:</strong> All external client-facing correspondence generated by the Rafa requires human approval prior to transmission.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Interactive Presentation CTA -->
+        <div class="interactive-deck-cta">
+          <div>
+            <strong style="color: #fff; font-size: 1.05rem;">Explore the Interactive Presentation Deck</strong>
+            <p style="color: #94a3b8; font-size: 0.88rem; margin-top: 2px;">
+              View the self-contained visual slide deck detailing the system architecture, code structure, and live metrics.
+            </p>
+          </div>
+          <a href="finance-rafa.html" target="_blank" class="btn-featured" style="text-decoration: none;">
+            <span>Open Finance Rafa Deck (Interactive)</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Dedicated CNT 3004 Course Section -->
   <section id="cnt3004" class="section-wrapper">
     <div class="container">
@@ -712,7 +962,7 @@
         <div class="section-tag">Dedicated Course Tab</div>
         <h2 class="section-title">CNT 3004 – Computer Network Concepts</h2>
         <p class="section-desc">
-          Reflections on course assignments, networking concepts, diagnostic tools, and course lectures.
+          Course reflections, assignment takeaways, network architecture analysis, and career application.
         </p>
       </div>
 
@@ -798,6 +1048,35 @@
           </p>
         </div>
       </div>
+
+      <!-- NEW: Overall Course Reflection for Part 2 Final Deliverable -->
+      <div class="reflection-card">
+        <div class="reflection-header">
+          <div>
+            <h3 class="reflection-title">Overall Course Reflection: Bridging Hardware Architecture & Software Systems</h3>
+            <span style="font-size: 0.85rem; color: var(--teal-light);">Part 2 Final Deliverable Reflection</span>
+          </div>
+          <span class="reflection-status">Final Deliverable</span>
+        </div>
+        <div class="card-body">
+          <p style="margin-bottom: 1rem; font-size: 0.96rem; color: #e5e7eb; line-height: 1.75;">
+            Completing CNT 3004 has provided me with a much deeper, foundational understanding of network architecture. In particular, it clarified how networking is not merely an abstract concept or isolated configuration file, but a direct interplay between <strong>physical hardware infrastructure</strong> and <strong>low-level software execution</strong>.
+          </p>
+          <div class="qa-block">
+            <div class="qa-title">How Networks Operate in Software & Operating System Sockets</div>
+            <div class="qa-content">
+              Prior to this course, software applications often felt decoupled from the physical wires and switches carrying their traffic. Studying protocol encapsulation, TCP handshakes, port socket bindings, and packet serialization demonstrated how applications interface directly with the operating system's networking stack. Whether an application makes an HTTP API request or sends a telemetry packet, it relies on strict transport-layer agreements, MTU fragmentation boundaries, and IP routing tables. Understanding this underlying software architecture gives me greater confidence when building automated pipelines, diagnosing socket timeouts, and inspecting live traffic.
+            </div>
+          </div>
+          <div class="qa-block" style="margin-bottom: 0;">
+            <div class="qa-title">Impact on Future Career in Healthcare Cybersecurity Operations</div>
+            <div class="qa-content">
+              This synthesis of hardware and software directly reinforces my career path in cybersecurity operations and healthcare infrastructure. In medical environments—where Electronic Health Records (EHR) and telehealth platforms must maintain strict HIPAA compliance and zero downtime—security analysts cannot treat the network as a black box. Understanding structured cabling, Intermediate Distribution Frames (IDFs), network segmentation, packet filtering, and packet-level Wireshark diagnostics enables me to pinpoint vulnerabilities, detect unauthorized traffic anomalies, and safeguard critical patient health records with clinical precision.
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -827,6 +1106,7 @@
           <div class="card-body">
             <ul>
               <li><strong>dasFlow AI Automation & Systems Internship:</strong> Managing and creating agentic automation AI workflows in the form of individual Rafa's to build functional operational pipelines. Utilizing Zapier, QuickBooks, HubSpot, Make, Model Context Protocol connectors, and Claude.</li>
+              <li><strong>Finance Rafa Production Pipeline:</strong> Spearheaded the development and mathematical verification of dasFlow's core financial intelligence pipeline, achieving 4/4 passing live reports, 1,119 automated tests, and 0 writes to live financial records.</li>
               <li><strong>Scratch-Programmed Simulation Project:</strong> Developed a functional application in Lua utilizing object-oriented principles, asynchronous event handling, real-time data processing, signal-based programming, and clean UI design.</li>
               <li><strong>Peer Tutoring in Mathematics:</strong> 3 years of voluntary math tutoring helping younger and matching students improve analytical foundations and academic performance.</li>
               <li><strong>Public Speaking & Reading:</strong> 2 years of public speaking experience engaging young audiences at Jamieson Elementary School.</li>
@@ -850,19 +1130,19 @@
         <div class="resume-actions-bar">
           <div>
             <strong style="color: #fff; font-size: 1.05rem;">Christopher Le – Official Resume</strong>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Updated Fall 2026 • Single Page Verified</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Updated Fall 2026 • Verified Single Page</div>
           </div>
-          <a href="assets/Christopher_Le_Resume_Fall_2026.pdf" download="Christopher_Le_Resume_Fall_2026.pdf" class="btn-primary">
+          <a href="assets/Christopher_Le_Resume.pdf" download="Christopher_Le_Resume.pdf" class="btn-primary">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             <span>Download Resume PDF</span>
           </a>
         </div>
 
         <!-- PDF Interactive Embed -->
-        <object data="assets/Christopher_Le_Resume_Fall_2026.pdf" type="application/pdf" class="pdf-frame">
+        <object data="assets/Christopher_Le_Resume.pdf" type="application/pdf" class="pdf-frame">
           <div style="padding: 3rem; text-align: center; color: var(--text-muted);">
             <p style="font-size: 1.1rem; margin-bottom: 1rem; color: #fff;">Your browser does not support inline PDF viewing.</p>
-            <a href="assets/Christopher_Le_Resume_Fall_2026.pdf" class="btn-primary" download>
+            <a href="assets/Christopher_Le_Resume.pdf" class="btn-primary" download>
               Click here to download Christopher Le's Resume (PDF)
             </a>
           </div>
@@ -875,7 +1155,7 @@
   <footer>
     <div class="container">
       <p style="margin-bottom: 6px;">
-        <strong>Christopher Le</strong> • UCF Information Technology • CNT 3004 e-Portfolio
+        <strong>Christopher Le</strong> • UCF Information Technology • CNT 3004 e-Portfolio (Part 2 Final Deliverable)
       </p>
       <p style="font-size: 0.8rem; color: #6b7280;">
         Built with HTML5 & modern CSS. Hosted live on GitHub Pages.

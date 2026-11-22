@@ -1,0 +1,340 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Finance Rafa, by CL</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Public+Sans:wght@400;600;700&family=Kalam:wght@400;700&display=swap">
+<style>
+:root{
+  --navy:#14213D; --navy2:#1E2F52; --paper:#F6F5F0; --card:#FFFFFF; --line:#D5DCE4; --muted:#4A5568; --soft:#C9D3E0;
+  --teal:#0B7A75; --teal-bright:#2BB3A8; --orange:#E07A2F; --gold:#F2C14E; --blue:#3A6EA5; --sky:#8AB4F8; --dot:#E0402F;
+  --bg:#ECEAE2; --fg:#14213D; --panel:#FFFFFF;
+  --display:'Oswald','Arial Narrow',Arial,sans-serif; --body:'Public Sans',Arial,sans-serif; --hand:'Kalam','Comic Sans MS',cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0C1424;--fg:#E8ECF2;--panel:#17223A;--line:#2B3A57;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1424;--fg:#E8ECF2;--panel:#17223A;--line:#2B3A57;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body)}
+.wrap{max-width:1200px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar h1{font-family:var(--display);font-size:1.3rem;margin:0 auto 0 0;letter-spacing:.02em;text-transform:uppercase}
+button,select{font:600 .92rem var(--body);border-radius:999px;border:1px solid var(--line);padding:.5rem .95rem;background:var(--panel);color:var(--fg);cursor:pointer}
+button.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+button:disabled{opacity:.45;cursor:default}
+button:focus-visible,select:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+label{font:600 .85rem var(--body);display:flex;align-items:center;gap:6px}
+.stage{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18);container-type:inline-size;background:var(--paper);color:var(--navy)}
+.slide{position:absolute;inset:0;padding:4.6cqw 6.5cqw 5cqw;display:flex;flex-direction:column;gap:2.2cqw}
+.slide.dark{background:var(--navy);color:var(--paper)}
+.slide.accent{background:var(--teal-bright);color:var(--navy)}
+.kicker{font:700 1.5cqw var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--teal-bright)}
+.slide h2{font-family:var(--display);font-weight:700;font-size:3.8cqw;line-height:1.08;margin:0;text-transform:uppercase;border-radius:.6cqw;align-self:flex-start;padding:.2cqw .4cqw;transition:box-shadow .3s}
+.slide.cover h2{font-size:7cqw}
+.lead{font-size:2cqw;line-height:1.4;max-width:74cqw;margin:0;border-radius:.6cqw;padding:.2cqw .4cqw;transition:box-shadow .3s}
+.grid{display:grid;gap:1.3cqw;align-content:start}
+.card{background:var(--card);color:var(--navy);border-radius:1cqw;padding:1.4cqw 1.7cqw;border-top:.5cqw solid var(--c,var(--teal));display:flex;flex-direction:column;gap:.5cqw;transition:box-shadow .3s}
+.dark .card{background:var(--navy2);color:var(--paper)}
+.card .big{font-family:var(--display);font-weight:700;font-size:4.4cqw;line-height:1;color:var(--c,var(--teal))}
+.card h3{margin:0;font-size:1.8cqw;font-weight:700}
+.card p{margin:0;font-size:1.4cqw;line-height:1.4;color:var(--muted)}
+.dark .card p{color:var(--soft)}
+.card .src{font-size:1.05cqw;font-weight:600;color:var(--muted);margin-top:auto;opacity:.85}
+.dark .card .src{color:var(--soft)}
+.card .when{font:700 1.15cqw var(--body);color:var(--c,var(--teal));letter-spacing:.04em}
+.rows{display:flex;flex-direction:column;gap:.6cqw}
+.row{display:grid;grid-template-columns:22% 1fr;gap:1.6cqw;background:var(--card);border-radius:.7cqw;padding:.9cqw 1.4cqw;font-size:1.5cqw;line-height:1.35;transition:box-shadow .3s;color:var(--navy)}
+.row b{font-weight:700;color:var(--teal)}
+.sketch{flex:1;min-height:0;background:var(--card);border-radius:1cqw;padding:.6cqw;transition:box-shadow .3s}
+.sketch svg{width:100%;height:100%;display:block}
+.sketch g{transition:filter .3s}
+.sketch g.on{filter:drop-shadow(0 0 6px var(--orange)) drop-shadow(0 0 2px var(--orange))}
+.on{box-shadow:0 0 0 .4cqw var(--orange)!important}
+.sketch g.on{box-shadow:none!important}
+.dot{position:absolute;width:2.4cqw;height:2.4cqw;border-radius:50%;background:var(--dot);box-shadow:0 0 0 .7cqw rgba(224,64,47,.25),0 0 1.6cqw rgba(224,64,47,.6);transform:translate(-50%,-50%);left:50%;top:50%;opacity:0;transition:left .8s cubic-bezier(.4,.1,.2,1),top .8s cubic-bezier(.4,.1,.2,1),opacity .3s;pointer-events:none;z-index:5}
+.dot.show{opacity:1}
+.who{position:absolute;right:1.8cqw;bottom:1.4cqw;display:flex;flex-direction:column;align-items:center;gap:.3cqw;z-index:4}
+.who .face{width:6.4cqw;height:6.4cqw;border-radius:50%;background:var(--teal);border:.35cqw solid var(--teal-bright);color:#fff;font:700 2.4cqw var(--display);display:grid;place-items:center;transform-origin:50% 100%}
+.who span{font:700 1.05cqw var(--body);color:var(--teal-bright)}
+.talking .who .face{animation:bob .5s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-.5cqw) rotate(2deg)}}
+.pager{position:absolute;left:6.5cqw;bottom:1.8cqw;font:600 1.2cqw var(--body);opacity:.6;z-index:4}
+.caption{background:var(--panel);border-radius:12px;padding:12px 16px;font-size:1.02rem;line-height:1.5;min-height:3.2em;border:1px solid var(--line)}
+.note{font-size:.85rem;opacity:.75;margin:0}
+.hg{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.9rem}
+.hg summary{cursor:pointer;font-weight:700}
+.hgrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 6px}
+.hg input[type=password],.hg input#hgvoice{font:.92rem var(--body);border-radius:8px;border:1px solid var(--line);padding:.45rem .6rem;background:var(--bg);color:var(--fg);min-width:0;flex:1 1 14em}
+.hg input#hgvoice{flex:0 1 7em}
+@media (prefers-reduced-motion: reduce){.dot{transition:none}.talking .who .face{animation:none}}
+</style></head><body>
+
+<div class="wrap">
+  <div class="bar">
+    <a href="index.html#finance-rafa" style="text-decoration:none;font:600 .92rem var(--body);border-radius:999px;border:1px solid var(--line);padding:.5rem .95rem;background:var(--panel);color:var(--fg);display:inline-flex;align-items:center;gap:4px;margin-right:8px;">← e-Portfolio</a>
+    <h1>Finance Rafa, Fall 2026</h1>
+    <button id="play" class="primary" type="button">Play from here</button>
+    <button id="pause" type="button">Pause</button>
+    <button id="prev" type="button" aria-label="Previous slide">Back</button>
+    <button id="next" type="button" aria-label="Next slide">Next</button>
+    <label for="speed">Speed
+      <select id="speed"><option value="1">1.0×</option><option value="1.1" selected>1.1×</option><option value="1.2">1.2×</option><option value="1.3">1.3×</option></select>
+    </label>
+    <select id="voice" aria-label="Voice"><option value="">Voice: automatic</option></select>
+  </div>
+  <details class="hg"><summary>Present it yourself</summary>
+    <label style="margin-top:6px"><input type="checkbox" id="manual"> Present it myself: no voice. Next and Back show each slide with its script below as speaker notes.</label>
+  </details>
+  <div class="stage" id="stage"><div id="slot"></div>
+    <div class="pager" id="pager"></div>
+    <div class="who" aria-hidden="true"><div class="face">CL</div><span>Christopher</span></div>
+    <div class="dot" id="dot" aria-hidden="true"></div>
+  </div>
+  <div class="caption" id="caption" aria-live="polite">Press “Play from here” to hear the full presentation. Back and Next move one slide at a time.</div>
+  <p class="note">The voice comes from your device, so it sounds different on a Mac, a PC or a phone. If it sounds wrong, select a different voice from the list.</p>
+</div>
+
+<!-- 1. Cover -->
+<template id="s-cover"><section class="slide dark cover">
+<div class="kicker" id="k">dasFlow · UCF Fall AI Team · November 19, 2026</div>
+<h2 id="t">Finance Rafa</h2>
+<p class="lead" id="l" style="color:var(--soft)">Christopher Le (CL), AI intern. I built and tested Finance Rafa, the AI agent that watches dasFlow's money and tells Nick what to do next.</p>
+<div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:auto;margin-bottom:5cqw;max-width:78cqw">
+<div class="card" id="r1" style="--c:var(--teal-bright)"><h3>Role</h3><p>Builder and tester, Finance Rafa</p></div>
+<div class="card" id="r2" style="--c:var(--orange)"><h3>Account</h3><p>ai@, Claude Project plus scheduled tasks</p></div>
+<div class="card" id="r3" style="--c:var(--gold)"><h3>Also</h3><p>Sales Rafa tasks in September</p></div></div>
+</section></template>
+
+<!-- 2. Before -->
+<template id="s-before"><section class="slide">
+<h2 id="t">Where dasFlow was</h2>
+<p class="lead" id="l">Before Finance Rafa, a person did all the money checks by hand in QuickBooks.</p>
+<div class="grid" style="grid-template-columns:repeat(2,1fr)">
+<div class="card" id="c1" style="--c:var(--dot)"><h3>No set chase days</h3><p>Nobody had a fixed day to remind a client about an unpaid invoice. Old invoices stayed open.</p></div>
+<div class="card" id="c2" style="--c:var(--dot)"><h3>No regular report</h3><p>Nick got no weekly cash report. Only the Florida tax reminder came to him by email.</p></div>
+<div class="card" id="c3" style="--c:var(--orange)"><h3>No unit count</h3><p>Nobody counted garment units against the 2,000 a month goal. QuickBooks mixes garments with fees.</p></div>
+<div class="card" id="c4" style="--c:var(--orange)"><h3>QuickBooks totals mislead</h3><p>Report totals add subtotal rows twice, and customer credits hide inside what clients owe.</p></div></div>
+</section></template>
+
+<!-- 3. How it works (sketch) -->
+<template id="s-how"><section class="slide">
+<h2 id="t">How Finance Rafa works</h2>
+<div class="sketch" id="sk">
+<svg viewBox="0 0 1000 380" role="img" aria-label="QuickBooks and HubSpot feed the scripts, the scripts write to Drive, and email goes to Nick">
+<defs>
+<filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#14213D"/></marker>
+</defs>
+<style>.hx{font:700 24px Kalam,'Comic Sans MS',cursive;fill:#14213D}.hs{font:400 18px Kalam,'Comic Sans MS',cursive;fill:#4A5568}</style>
+<g id="n1"><rect x="20" y="40" width="200" height="130" rx="14" fill="#DCEFEB" stroke="#14213D" stroke-width="2.5" filter="url(#rough)"/>
+<text x="120" y="95" text-anchor="middle" class="hx">QuickBooks</text><text x="120" y="125" text-anchor="middle" class="hs">read only</text></g>
+<g id="n2"><rect x="20" y="210" width="200" height="130" rx="14" fill="#FBEDD2" stroke="#14213D" stroke-width="2.5" filter="url(#rough)"/>
+<text x="120" y="265" text-anchor="middle" class="hx">HubSpot</text><text x="120" y="295" text-anchor="middle" class="hs">deal stage only</text></g>
+<g id="n3"><rect x="330" y="105" width="270" height="170" rx="16" fill="#14213D" stroke="#14213D" stroke-width="2.5" filter="url(#rough)"/>
+<text x="465" y="165" text-anchor="middle" class="hx" style="fill:#F6F5F0">Scripts</text><text x="465" y="200" text-anchor="middle" class="hs" style="fill:#C9D3E0">every figure, every check</text><text x="465" y="228" text-anchor="middle" class="hs" style="fill:#C9D3E0">Claude never does the math</text></g>
+<g id="n4"><rect x="720" y="40" width="260" height="130" rx="14" fill="#E3ECF8" stroke="#14213D" stroke-width="2.5" filter="url(#rough)"/>
+<text x="850" y="95" text-anchor="middle" class="hx">Shared Drive</text><text x="850" y="125" text-anchor="middle" class="hs">reports the team can see</text></g>
+<g id="n5"><rect x="720" y="210" width="260" height="130" rx="14" fill="#DDF1E5" stroke="#14213D" stroke-width="2.5" filter="url(#rough)"/>
+<text x="850" y="265" text-anchor="middle" class="hx">Email to Nick</text><text x="850" y="295" text-anchor="middle" class="hs">one alert per run</text></g>
+<path d="M222,105 C270,110 290,150 328,165" fill="none" stroke="#14213D" stroke-width="2.5" marker-end="url(#ah)" filter="url(#rough)"/>
+<path d="M222,275 C270,270 290,230 328,215" fill="none" stroke="#14213D" stroke-width="2.5" marker-end="url(#ah)" filter="url(#rough)"/>
+<path d="M602,165 C650,150 680,110 718,105" fill="none" stroke="#14213D" stroke-width="2.5" marker-end="url(#ah)" filter="url(#rough)"/>
+<path d="M602,215 C650,230 680,270 718,275" fill="none" stroke="#14213D" stroke-width="2.5" marker-end="url(#ah)" filter="url(#rough)"/>
+</svg></div>
+</section></template>
+
+<!-- 4. What I built -->
+<template id="s-built"><section class="slide">
+<h2 id="t">What I built and shipped</h2>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" id="c1" style="--c:var(--teal)"><div class="when">Live Nov 4</div><h3>Friday money report</h3><p>Cash, who owes money and the chase list. Every Friday at 7:00 AM.</p></div>
+<div class="card" id="c2" style="--c:var(--teal)"><div class="when">Live Nov 4, emails from Nov 17</div><h3>Daily reminders</h3><p>Monday to Thursday, 7:30 AM. Which client to chase today, and when Nick must call.</p></div>
+<div class="card" id="c3" style="--c:var(--blue)"><div class="when">Live Nov 6</div><h3>Friday safety check</h3><p>Confirms that the Friday report arrived. If not, it says so.</p></div>
+<div class="card" id="c4" style="--c:var(--blue)"><div class="when">Live Nov 1 and Nov 15</div><h3>Florida tax reminders</h3><p>A soft reminder on the 1st and a hard reminder on the 15th.</p></div>
+<div class="card" id="c5" style="--c:var(--orange)"><div class="when">On Nov 17, first live Nov 20</div><h3>Units email</h3><p>Garment units on paid invoices against 2,000 and 4,000 a month, with a pace line.</p></div>
+<div class="card" id="c6" style="--c:var(--orange)"><div class="when">On Nov 16 and 17</div><h3>Escalations, status line, shared Drive</h3><p>Old invoices go to Nick. Robot Rafa reads a status file. Reports moved where the team can see them.</p></div></div>
+</section></template>
+
+<!-- 5. Chase ladder -->
+<template id="s-ladder"><section class="slide">
+<h2 id="t">The invoice chase days</h2>
+<p class="lead" id="l">Finance Rafa never contacts a client. It tells a person who to chase, and when.</p>
+<div class="rows">
+<div class="row" id="d3"><b>Day 3, 7, 14</b><span>The team sends a reminder to the client. One line for each client.</span></div>
+<div class="row" id="d21"><b>Day 21</b><span>Nick calls. Three reminders got no reply, so a fourth email will not help.</span></div>
+<div class="row" id="d30"><b>Day 30</b><span>Nick decides the next step: a call, a payment plan, or a hold on new work.</span></div>
+<div class="row" id="d90"><b>Over 90 days</b><span>The invoice moves to the call list. A reply in the Chase log stops the reminders.</span></div></div>
+<p class="lead" id="src" style="font-size:1.25cqw;color:var(--muted)">Source: Finance Rafa decisions FD48 and FD62. All five steps seen in live runs, Oct 29 to Nov 16 (Drive, alerts folder).</p>
+</section></template>
+
+<!-- 6. Proof -->
+<template id="s-proof"><section class="slide dark">
+<h2 id="t">Proof</h2>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" id="c1" style="--c:var(--teal-bright)"><div class="big">4 of 4</div><h3>Live Friday reports passed</h3><p>Nov 4, 6, 10 and 13. Each one graded OK.</p><div class="src">Source: Drive, reports folder, Nov 13</div></div>
+<div class="card" id="c2" style="--c:var(--gold)"><div class="big">350</div><h3>Garment units, October</h3><p>On invoices paid in full. 13 of 13 October invoices matched QuickBooks.</p><div class="src">Source: QuickBooks, checked by me on Nov 17</div></div>
+<div class="card" id="c3" style="--c:var(--sky)"><div class="big">1,119</div><h3>Automated tests pass</h3><p>They check every figure, every guardrail and every report section.</p><div class="src">Source: finance-rafa repo, Nov 17</div></div>
+<div class="card" id="c4" style="--c:var(--orange)"><div class="big">7:42 AM</div><h3>First live email to Nick</h3><p>The daily reminders, with day 30 lines, sent on Nov 17.</p><div class="src">Source: sales@ Sent mail, Nov 17</div></div>
+<div class="card" id="c5" style="--c:var(--teal-bright)"><div class="big">0</div><h3>Writes to QuickBooks</h3><p>Finance Rafa only reads. Nick makes every change.</p><div class="src">Source: run records, write attempts log</div></div>
+<div class="card" id="c6" style="--c:var(--gold)"><div class="big">74</div><h3>Decisions recorded</h3><p>Each one says who decided, when and why.</p><div class="src">Source: repo, docs/DECISIONS.md, Nov 17</div></div></div>
+</section></template>
+
+<!-- 7. Works today / left -->
+<template id="s-status"><section class="slide">
+<h2 id="t">What works today, what is left</h2>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" id="c1" style="--c:var(--teal)"><h3>Works today</h3><p>Daily reminders, the Friday report, the safety check, tax reminders, escalations. All run on their own and email Nick.</p></div>
+<div class="card" id="c2" style="--c:var(--orange)"><h3>Starts Friday</h3><p>The units email, with real numbers, after the skill rebuild.</p></div>
+<div class="card" id="c3" style="--c:var(--blue)"><h3>Waits on a person</h3><p>Nick: how fast clients pay, for the 13-week cash forecast. Me: the P&amp;L chart review, for margin. Three settings.</p></div></div>
+<p class="lead" id="l">There is no more to build. Each item left is an answer or a setting.</p>
+</section></template>
+
+<!-- 8. Lessons -->
+<template id="s-lessons"><section class="slide">
+<h2 id="t">What I learned</h2>
+<div class="rows">
+<div class="row" id="c1"><b>Scripts do the math</b><span>An AI that adds numbers in chat gives a number that looks right but is not checked. Every figure comes from a script.</span></div>
+<div class="row" id="c2"><b>Check where files go</b><span>The first reports went to a private folder. I moved every file to the shared Drive on Nov 17.</span></div>
+<div class="row" id="c3"><b>Readable beats complete</b><span>My first units checklist was a Google Doc that nobody could read. A short list in chat got it verified in 7 minutes.</span></div>
+<div class="row" id="c4"><b>Settings are guardrails</b><span>"Needs approval" does not stop a scheduled task in Auto mode. "Never allow" does.</span></div></div>
+</section></template>
+
+<!-- 9. Next -->
+<template id="s-next"><section class="slide accent">
+<h2 id="t">What happens next</h2>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" id="c1" style="--c:var(--teal)"><h3>Nick reviews</h3><p>The daily email and the Friday units email. Tell us what helps and what is noise.</p></div>
+<div class="card" id="c2" style="--c:var(--teal)"><h3>Nick answers</h3><p>How fast clients pay, by invoice age. That turns on the 13-week cash forecast.</p></div>
+<div class="card" id="c3" style="--c:var(--teal)"><h3>Watch one week</h3><p>The daily runs from Nov 18 to Nov 23. If they stay clean, we delete the old paused tasks.</p></div></div>
+<p class="lead" id="l" style="font-weight:600">Thank you, Thanh, for the plan and the tasks, and thank you, Nick, for the chance. Questions go to me.</p>
+</section></template>
+
+<script>
+const SLIDES = [
+ { id:'cover', steps:[
+  ['t', "Hi team. I'm Christopher Le. This semester I built and tested Finance Rafa."],
+  ['l', "Finance Rafa is the AI agent that watches dasFlow's money. It tells Nick who owes money and what to do next."],
+  ['r1', "My role was builder and tester."],
+  ['r2', "Finance Rafa runs on the ai@ account. It is a Claude Project with scheduled tasks."],
+  ['r3', "In September, I also did tasks for Sales Rafa."]]},
+ { id:'before', steps:[
+  ['l', "First, where dasFlow was. A person did all the money checks by hand in QuickBooks."],
+  ['c1', "There were no set days to chase an unpaid invoice. Old invoices stayed open."],
+  ['c2', "Nick got no weekly cash report. The only email he got was the Florida tax reminder."],
+  ['c3', "Nobody counted garment units against the goal of two thousand a month, because QuickBooks mixes garments with fees."],
+  ['c4', "And QuickBooks totals can mislead. They count subtotal rows twice, and client credits hide inside what clients owe."]]},
+ { id:'how', steps:[
+  ['t', "Here is how Finance Rafa works."],
+  ['n1', "It reads QuickBooks. It only reads. It never changes a record."],
+  ['n2', "It reads HubSpot deal stages, to tell a sample from a production order."],
+  ['n3', "Then scripts compute every figure and check it. Claude never does the math in chat. This is the most important rule."],
+  ['n4', "The scripts write each report to the shared Drive, where the team can see it."],
+  ['n5', "And each run sends one alert email to Nick."]]},
+ { id:'built', steps:[
+  ['t', "Here is what I built and shipped, with the dates."],
+  ['c1', "The Friday money report went live on November fourth. It shows cash, who owes money, and the chase list."],
+  ['c2', "The daily reminders also went live on November fourth. Since November seventeenth, they email Nick every weekday morning."],
+  ['c3', "The Friday safety check went live on November sixth. It confirms the report arrived."],
+  ['c4', "The Florida tax reminders ran on November first and November fifteenth."],
+  ['c5', "The units email is on. Its first live run is this Friday, November twentieth."],
+  ['c6', "And on November sixteenth and seventeenth, I turned on escalations and the status line for Robot Rafa, and I moved every report to the shared Drive."]]},
+ { id:'ladder', steps:[
+  ['l', "This is the invoice chase schedule. Finance Rafa never contacts a client. It tells a person who to chase, and when."],
+  ['d3', "On day three, seven and fourteen, the team sends a reminder."],
+  ['d21', "On day twenty one, Nick calls. Three emails got no reply, so a fourth email will not help."],
+  ['d30', "On day thirty, Nick decides the next step."],
+  ['d90', "After ninety days, the invoice moves to the call list. A reply in the Chase log stops the reminders."],
+  ['src', "We saw all five steps in live runs between October twenty ninth and November sixteenth."]]},
+ { id:'proof', steps:[
+  ['t', "Now the proof. Each number names its source."],
+  ['c1', "Four of four live Friday reports passed, on November fourth, sixth, tenth and thirteenth."],
+  ['c2', "In October, three hundred fifty garment units were on paid invoices. I checked all thirteen October invoices against QuickBooks on November seventeenth, and all of them matched."],
+  ['c3', "One thousand one hundred nineteen automated tests pass."],
+  ['c4', "The first live email reached Nick at seven forty two in the morning on November seventeenth."],
+  ['c5', "Finance Rafa made zero changes in QuickBooks. It only reads."],
+  ['c6', "And seventy four decisions are recorded, each one with who decided, when and why."]]},
+ { id:'status', steps:[
+  ['c1', "Here is what works today. The daily reminders, the Friday report, the safety check, the tax reminders and escalations all run on their own."],
+  ['c2', "The units email starts this Friday, with real numbers, after the skill rebuild."],
+  ['c3', "Some items wait on a person. Nick tells us how fast clients pay, for the cash forecast. I finish the P and L chart review, for margin. And three settings remain."],
+  ['l', "There is nothing more to build. Each item left is an answer or a setting."]]},
+ { id:'lessons', steps:[
+  ['t', "Here is what I learned."],
+  ['c1', "Scripts do the math. An AI that adds numbers in chat gives a number that looks right, but nobody checked it."],
+  ['c2', "Check where files go. The first reports went to a private folder. On November seventeenth, I moved every file to the shared Drive."],
+  ['c3', "Readable beats complete. My first units checklist was a Google Doc nobody could read. A short list in chat got it verified in seven minutes."],
+  ['c4', "And settings are guardrails. In Auto mode, needs approval does not stop a scheduled task. Never allow does."]]},
+ { id:'next', steps:[
+  ['c1', "What happens next. Nick, please review the daily email and the Friday units email. Tell us what helps and what is noise."],
+  ['c2', "Please tell us how fast clients pay, by invoice age. That turns on the thirteen week cash forecast."],
+  ['c3', "We watch the daily runs from November eighteenth to the twenty third. If they stay clean, we delete the old paused tasks."],
+  ['l', "Thank you, Thanh, for the plan and the tasks. Thank you, Nick, for the chance. Questions go to me."]]}
+];
+const MALE=['guy','davis','andrew','brian','christopher','eric','roger','steffan','aaron','alex','evan','fred','tom','daniel','arthur'];
+const stage=document.getElementById('stage'), slot=document.getElementById('slot'), dot=document.getElementById('dot'), cap=document.getElementById('caption'), pager=document.getElementById('pager');
+const sel=document.getElementById('voice'), speedSel=document.getElementById('speed');
+const synth=window.speechSynthesis;
+let cur=0, run=0, playing=false;
+function voices(){ try { return synth ? synth.getVoices() : []; } catch(e){ return []; } }
+function fillVoices(){ const keep=sel.value; sel.replaceChildren(new Option('Voice: automatic','')); voices().filter(v=>/^en/i.test(v.lang)).forEach(v=>sel.add(new Option(v.name+' ('+v.lang+')', v.name))); sel.value=keep; }
+if (synth){ fillVoices(); try { synth.onvoiceschanged=fillVoices; } catch(e){} }
+function pickVoice(){
+  const vs=voices();
+  if (sel.value){ const v=vs.find(x=>x.name===sel.value); if (v) return v; }
+  const us=vs.filter(v=>v.lang.toLowerCase().replace('_','-').startsWith('en-us'));
+  return us.find(v=>MALE.some(n=>v.name.toLowerCase().includes(n))) || us[0] || vs.find(v=>/^en/i.test(v.lang)) || null;
+}
+function render(i){
+  cur=Math.max(0,Math.min(SLIDES.length-1,i));
+  slot.replaceChildren(document.getElementById('s-'+SLIDES[cur].id).content.cloneNode(true));
+  pager.textContent=(cur+1)+' / '+SLIDES.length;
+  pager.style.color=slot.querySelector('.slide').classList.contains('dark')?'var(--paper)':'var(--navy)';
+  dot.classList.remove('show');
+  if (!playing){ const m=document.getElementById('manual').checked; if (m) cap.textContent=SLIDES[cur].steps.map(x=>x[1]).join(' '); }
+  document.getElementById('prev').disabled=cur===0; document.getElementById('next').disabled=cur===SLIDES.length-1;
+}
+function pointAt(key){
+  slot.querySelectorAll('.on').forEach(n=>n.classList.remove('on'));
+  const el=slot.querySelector('#'+key); if (!el) return;
+  el.classList.add('on');
+  const s=stage.getBoundingClientRect(), r=el.getBoundingClientRect();
+  dot.style.left=(r.left-s.left+Math.min(r.width*0.5,160))+'px';
+  dot.style.top=(r.top-s.top+Math.min(r.height*0.25,40))+'px';
+  dot.classList.add('show');
+}
+function halt(){ run++; playing=false; try { synth && synth.cancel(); } catch(e){} stage.classList.remove('talking'); }
+function deviceSay(text, me, done){
+  if (!synth){ cap.textContent=text; setTimeout(()=>{ if (me===run) done(); }, 2500); return; }
+  const u=new SpeechSynthesisUtterance(text), v=pickVoice();
+  if (v){ u.voice=v; u.lang=v.lang; } else { u.lang='en-US'; }
+  u.rate=Number(speedSel.value)||1.1; u.pitch=1;
+  u.onend=()=>{ if (me===run) setTimeout(done,250); };
+  u.onerror=()=>{ if (me===run) setTimeout(done,250); };
+  stage.classList.add('talking'); synth.speak(u);
+}
+function say(text, me, done){ deviceSay(text, me, done); }
+function playFrom(i){
+  halt(); render(i); playing=true;
+  const me=run; let step=0;
+  const tick=()=>{
+    if (me!==run) return;
+    const steps=SLIDES[cur].steps;
+    if (step>=steps.length){
+      if (cur<SLIDES.length-1){ render(cur+1); step=0; setTimeout(tick,600); return; }
+      stage.classList.remove('talking'); playing=false;
+      cap.textContent='That is the full presentation. Press Back or Next to see a slide again.'; return;
+    }
+    const [key,text]=steps[step++];
+    pointAt(key); cap.textContent=text; say(text, me, tick);
+  };
+  tick();
+}
+document.getElementById('play').addEventListener('click',()=>{ document.getElementById('manual').checked=false; playFrom(cur); });
+document.getElementById('manual').addEventListener('change',e=>{ halt(); render(cur); if(!e.target.checked) cap.textContent='Press “Play from here” to hear the full presentation.'; });
+document.getElementById('pause').addEventListener('click',()=>{ halt(); cap.textContent='Paused. Press “Play from here” to continue on this slide.'; });
+document.getElementById('prev').addEventListener('click',()=>{ const was=playing; halt(); render(cur-1); if (was) playFrom(cur); });
+document.getElementById('next').addEventListener('click',()=>{ const was=playing; halt(); render(cur+1); if (was) playFrom(cur); });
+document.addEventListener('keydown',e=>{ if (e.target.closest('select')) return; if (e.key==='ArrowRight') document.getElementById('next').click(); if (e.key==='ArrowLeft') document.getElementById('prev').click(); });
+render(0);
+</script>
+</body></html>
+
+</body></html>
